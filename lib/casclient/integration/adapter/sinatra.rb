@@ -9,7 +9,9 @@ module CASClient
           end
 
           def reset_session(app)
-            app.session = {}
+            app.session[:casfilteruser] = nil
+            app.session[:cas_last_valid_ticket] = nil
+            app.session[:cas_last_valid_ticket_service] = nil
           end
 
           def service_url(app)

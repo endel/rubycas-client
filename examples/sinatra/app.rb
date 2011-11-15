@@ -18,7 +18,7 @@ get '/' do
 end
 
 get '/logout' do
-  logout!
+  CASClient::Integration::Filter.logout(self)
 end
 
 get '/foo' do
